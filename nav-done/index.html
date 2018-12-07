@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>第一个导航</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+</head>
+<body>
+    <header></header>
+    <main >
+        <div id="main"></div>
+    </main>
+    <footer></footer>
+    <script>
+        //1.初始化数据
+        var hashA = init()
+		var keys = hashA['keys']
+        var hash = hashA['hash']
+        
+
+
+        //2.生成键盘
+		// 遍历 keys，生成 kbd 标签
+        generateKeyboard(keys, hash)
+        
+        
+
+        //3.监听键盘
+        listenToUser(hash)
+
+
+
+        //功能函数
+        function init(){
+            var keys = {
+			'0': {0:'q',1:'w',2:'e',3:'r',4:'t',5:'y',6:'u',7:'i',8:'o',9:'p',length:10},
+			'1': {0:'a',1:'s',2:'d',3:'f',4:'g',5:'h',6:'j',7:'k',8:'l',length:9},
+			'2': {0:'z',1:'x',2:'c',3:'v',4:'b',5:'n',6:'m',length:7},
+            'length': 3
+            }
+            var hash = {'q': 'qq.com', 'w': 'weibo.com', 'e': 'ele.me', 'r': 'renren.com', 't': 'tianya.com', 'y': 'youtube.com', 'u': 'uc.com' , 'i': 'iqiyi.com', 'o': 'opera.com', 'p': undefined, 'a': 'acfun.tv', 's': 'sohu.com', 'z': 'zhihu.com', 'm': 'www.mcdonalds.com.cn'
+            }
+            //取出localstorage中的zzz对应的hash
+            var hashInLocalStorage = getHashInLocalStorage('zzz')
+            if(hashInLocalStorage){
+                hash = hashInLocalStorage
+            }
+            return {
+				"keys": keys,
+				"hash": hash
+			}
+        }
+
+        function getHashInLocalStorage(name){
+            return JSON.parse(localStorage.getItem(name) || 'null')
+            }
+
+        function generateKeyboard(key,hash){
+            for(var index = 0; index<keys['length']; index = index+1){
+                var div = document.createElement('div')
+                div.className = 'row'
+            
+                main.appendChild(div)
+                var row = keys[index] //第一个数组 第二个数组 第三个数组
+                for(var index2 = 0; index2<row['length']; index2 = index2+1){
+                    //0-9   0-8   0-7
+                    
+                    var span = createSpan(row[index2])
+    
+                    var button = createButton(row[index2])
+    
+                    var img = createImage(hash[row[index2]])
+    
+                    var kbd = document.createElement('kbd')
+
+                    kbd.className = 'key'
+                    kbd.appendChild(span)
+                    kbd.appendChild(img)
+                    kbd.appendChild(button)
+                    div.appendChild(kbd)
+                }
+            }
+        }
+
+        function createSpan(textContent){
+			var span = document.createElement('span')
+			span.textContent = textContent
+			span.className = "text"
+			return span
+        }
+        function createButton(id){
+            var button = document.createElement('button')
+                button.textContent = '编辑'
+                button.id = id
+                button.onclick = function(asdsd){
+                    //asdsd['target']即是用户输入的qwert...
+                    var key = asdsd['target']['id'] //q w e r t...
+                    var x = prompt('请输入你需要的网址') //qq.com...
+                    hash[key] = x //hash变更
+                    localStorage.setItem('zzz',JSON.stringify(hash))
+                    console.log(hash)
+                }
+            return button
+        }
+        function createImage(domain){
+            var img = document.createElement('img')
+                if (domain){
+                    img.src = 'http://'+domain + '/favicon.ico'
+                }else{
+                    img.src = '//wx2.sinaimg.cn/large/005Pbvboly1fxyku7l15kj300y00y06x.jpg'
+                }
+                /* img.onerror = function(xxx){
+			    xxx.target.src = '//wx2.sinaimg.cn/large/005Pbvboly1fxyku7l15kj300y00y06x.jpg'
+			    }   */
+			return img
+		}
+
+        function listenToUser(){
+            document.onkeypress = function(asd){
+                var key = asd['key'] //qwertyuiop
+                var website = hash[key]
+                //location.href = 'http://'+website
+                window.open('http://'+website,'_blank')
+            }
+        }
+
+    </script>
+</body>
+</html>
