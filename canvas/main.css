@@ -1,18 +1,14 @@
 
 *{margin: 0;padding: 0;}
-body{
-  background: white;
-}
+
 #xxx{
   background: white;
   display: block;
 }
 
 body{
+  width: 100%;
   overflow: hidden;
-}
-
-html{
 }
 
 .icon {
