@@ -1,0 +1,101 @@
+
+*{margin: 0;padding: 0;}
+body{
+  background: white;
+}
+#xxx{
+  background: white;
+  display: block;
+}
+
+body{
+  overflow: hidden;
+}
+
+html{
+}
+
+.icon {
+  width: 1em; height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+}
+
+.actions{
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 20px;
+}
+
+.actions.x > #brush{
+  display: inline-block;
+}
+
+
+.actions svg{
+  width: 2em;
+  height: 2em;
+  margin-left: 5px;
+  fill: gray;
+  transition: all 0.3s;
+}
+
+.actions svg.active{
+  fill: black;
+  transform: scale(1.2);
+}
+
+.colors{
+  position: fixed;
+  top: 54px;
+  left: 23px;
+}
+
+.colors>li{
+  list-style:none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid rgb(192,192,192);
+  margin:  10px 0;
+  transition: all 0.3s;
+}
+
+.colors>li.black{
+  background: black;
+}
+.colors>li.red{
+  background: red;
+}
+
+.colors>li.blue{
+  background: blue;
+}
+
+.colors>li.purple{
+  background: purple;
+}
+.colors>li.active{
+  box-shadow: 0 0 3px rgba(192, 192, 192,0.95);
+  transform: scale(1.2);
+}
+.sizes{
+  list-style: none;
+  position: fixed;
+  right: 10px;
+  top: 30px;
+}
+
+.sizes>.thin{
+  width: 30px;
+  height: 0;
+  border-bottom: 4px solid black;
+}
+.sizes>.thick{
+  padding-top: 25px;
+  width: 30px;
+  height: 0;
+  border-bottom: 8px solid black;
+}
