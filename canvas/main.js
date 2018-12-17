@@ -1,10 +1,15 @@
 var yyy = document.getElementById('xxx');
 var context = yyy.getContext('2d');
 var lineWidth = 4
+context.fillStyle = "#FFFFFF";
+context.fillRect(0,0,yyy.width,yyy.height);
+
 autoSetCanvasSize(yyy)
 
 listenToUser(yyy)
 
+brush.classList.add('active')
+black.classList.add('active')
 var eraserEnabled = false
 brush.onclick = function() {
   eraserEnabled =false
@@ -20,7 +25,7 @@ update.onclick = function () {
   context.clearRect(0, 0, yyy.width, yyy.height)
 }
 download.onclick = function(){
-  var url = yyy.toDataURL("image/png")
+  var url = yyy.toDataURL("image/jpeg")
   var a = document.createElement('a')
   document.body.appendChild(a)
   a.href = url
@@ -89,7 +94,9 @@ function drawCircle(x, y, radius) {
   context.beginPath()
   context.arc(x, y, radius, 0, Math.PI * 2);
   context.fill()
+  context.fillStyle = 'white';
 }
+
 
 function drawLine(x1, y1, x2, y2) {
   context.beginPath();
