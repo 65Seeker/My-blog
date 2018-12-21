@@ -26,6 +26,14 @@ ol {
     clear: both;
 }
 
+[data-x].offset{
+    transform: translateY(150px);
+}
+[data-x]{
+    transform: translateY(0);
+    transition: all 0.5s;
+}
+
 .topNavBar {
     padding: 20px 0;
     position: fixed;
@@ -106,7 +114,7 @@ ol {
     border-bottom: 3px solid transparent;
 }
 
-.topNavBar nav>ul>li>a:hover::after {
+.topNavBar nav>ul>li>a:hover::after,.topNavBar nav>ul>li.highlight>a::after {
     content: '';
     display: block;
     position: absolute;
@@ -130,7 +138,7 @@ ol {
 }
 
 .topNavBar .submenu {
-    display: none;  
+    display: none;
     position: absolute;
     right: 0;
     top: 37px;
@@ -143,11 +151,13 @@ ol {
     display: block;
     animation: submenuSlide 0.3s;
 }
-@keyframes submenuSlide{
-    0%{
+
+@keyframes submenuSlide {
+    0% {
         margin-right: 100%
     }
-    100%{
+
+    100% {
         margin-right: 0%
     }
 }
@@ -312,13 +322,6 @@ section.skills h2 {
     padding: 40px 50px 0;
 }
 
-.skills .progressBar {
-    height: 4px;
-    padding: 0;
-    background: #fae1e1;
-    border-radius: 2px;
-}
-
 .skills h3 {
     font-size: 14px;
     line-height: 1.1;
@@ -326,11 +329,25 @@ section.skills h2 {
     margin: 0 0 5px 0;
 }
 
+.skills .progressBar {
+    height: 4px;
+    padding: 0;
+    background: #fae1e1;
+    border-radius: 2px;
+    overflow: hidden;
+}
+
 .skills .progress {
     background: #e6686a;
     height: 100%;
     width: 50%;
     border-radius: 2px;
+    transform: translateX(0);
+    transition: all 1.5s;
+}
+
+.skills.offset .progress{
+    transform: translateX(-100%);
 }
 
 .skills ol li {
