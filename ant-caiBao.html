@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0, minimum-scale=1.0">
+    <title>ant-caiBao</title>
+    <script>
+        let pageWidth = window.innerWidth
+        document.write('<style>html{font-size:' + pageWidth / 10 + 'px;}</style>')
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-size: 16px;
+        }
+
+        .banner {
+            z-index: 1;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2rem;
+            background-image: url(http://wx3.sinaimg.cn/mw690/005Pbvbogy1g283w8eh6aj30af028wek.jpg);
+            background-position: center center;
+            background-size: cover;
+        }
+
+        .mask {
+            background: #fff;
+            height: 20px;
+            border-radius: 10px;
+            margin-top: 1.7rem;
+        }
+
+
+        main {
+            border-radius: 5px;
+            margin-top: 73px;
+        }
+
+        .videoWrap {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.4rem;
+        }
+
+        .videoImg {
+            width: 5rem;
+            height: 3.1rem;
+            border-radius: 10px;
+        }
+        .videoInfo{
+            padding-left: 10px;
+        }
+        .title{
+            color: #333333;
+            font-size: 16px;
+            -webkit-line-clamp:2;
+            display: -webkit-box;
+            -webkit-box-orient:vertical;
+            overflow:hidden;
+            text-overflow: ellipsis;
+            max-height: 5rem;
+        }
+        .other{
+            color: #A3B1CC;
+            font-size: 14px;
+            line-height: 25px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="banner">
+        <div class="mask"></div>
+    </div>
+    <main>
+        <div class="videoWrap">
+            <div class="videoImgWrap">
+                <img class="videoImg" src="http://wx4.sinaimg.cn/mw690/005Pbvbogy1g2819wmggqj30dw099myy.jpg" alt="">
+            </div>
+            <div class="videoInfo">
+                <div class="title">教学视频教学视频教学视频教学视频教学视频教学视频教学视频教学视频教学视频</div>
+                <div class="other">
+                    <div class="author">王老师</div>
+                    <span class="grade">一年级</span>
+                    <span class="subject">语文</span>
+                </div>
+            </div>
+        </div>
+        <div class="videoWrap">
+            <div class="videoImgWrap">
+                <img class="videoImg" src="http://wx3.sinaimg.cn/mw690/005Pbvbogy1g2819qoexjj30dw09940g.jpg" alt="">
+            </div>
+            <div class="videoInfo">
+                <div class="title">教学视频教学视频教学视频</div>
+                
+                <div class="other">
+                        <div class="author">王老师</div>
+                    <span class="grade">一年级</span>
+                    <span class="subject">语文</span>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

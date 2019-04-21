@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ant-caiBao-details</title>
+    <script>
+        let pageWidth = window.innerWidth
+        document.write('<style>html{font-size:' + pageWidth / 10 + 'px;}</style>')
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-size: 16px;
+        }
+
+        video {
+            width: 100%;
+        }
+
+
+
+        .back {
+            height: 1.1rem;
+            display: flex;
+            justify-content: start;
+            align-items: center;
+        }
+
+        .title {
+            color: #000033;
+            font-size: 20px;
+            line-height: 25px;
+            font-weight: bold;
+            margin: 8px 15px 5px 15px;
+            -webkit-line-clamp: 2;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .videoInfo {
+            color: #7D8FB3;
+            font-size: 12px;
+            margin: 0 15px;
+        }
+
+        .pageviews {
+            margin-right: 15px;
+        }
+
+        .authorInfo {
+            height: 30px;
+            margin: 12px 15px 0 15px;
+            border-bottom: #CFD6E6 solid 1px;
+            padding-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .authorImg {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+        }
+
+        .author {
+            color: #333333;
+            font-size: 16px;
+            margin: 0 15px;
+        }
+
+        .subject {
+            color: #7D8FB3;
+            font-size: 14px;
+        }
+
+        .videoImgWrap {}
+
+        .recommendSign {
+            margin: 15px;
+            color: #7D8FB3;
+            font-size: 16px;
+        }
+
+        .videoImg {
+            width: 120px;
+            height: 75px;
+            margin: 5px 15px 5px 15px;
+            border-radius: 10px;
+        }
+
+        .recommendInfo {
+            display: flex;
+            justify-content: start;
+            align-items: center;
+        }
+
+        .recommendtitle {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            width: 5rem;
+            color: #333333;
+            font-size: 16px;
+        }
+
+        .recommendDetails {
+            margin-right: 0 15px 0 0;
+        }
+
+        .other {
+            font-size: 14px;
+            line-height: 25px;
+            color: #A3B1CC;
+            margin-top: 10px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="back">
+        <img src="http://wx3.sinaimg.cn/mw690/005Pbvboly1g2aq9vy2ntj301c01c0j2.jpg" style="width:20px;height: 20px;margin: 0 13px;">
+        <span>才宝微课堂</span>
+    </div>
+    <main>
+        <div class="videoWrap">
+            <video src="./鸟叔.mp4" controls></video>
+        </div>
+        <div class="videoDetails">
+            <div class="title">教学视频教学视频教学视频教学视频教学视频教学视频教学视频教学视频教学视频</div>
+            <div class="videoInfo">
+                <span class="pageviews">浏览量：888</span>
+                <span class="publishTime">发布时间：2019年4月19日</span>
+            </div>
+            <div class="authorInfo">
+                <img class="authorImg" src="http://wx2.sinaimg.cn/mw690/005Pbvbogy1g285z7b758j305g05gdfs.jpg" alt="">
+                <span class="author">王老师</span>
+                <span class="subject">小学 语文</span>
+            </div>
+        </div>
+    </main>
+
+    <div class="recommend">
+        <div class="recommendSign">
+            推荐视频
+        </div>
+        <div class="recommendInfo">
+            <div class="videoImgWrap">
+                <img class="videoImg" src="http://wx4.sinaimg.cn/mw690/005Pbvbogy1g2819wmggqj30dw099myy.jpg" alt="">
+            </div>
+            <div class="recommendDetails">
+                <div class="recommendtitle">教学视频教学视频教学视频教学视频教学视频</div>
+                <div class="other">
+                    <div class="recommendauthor">王老师</div>
+                    <span class="recommendgrade">一年级</span>
+                    <span class="recommendsubject">语文</span>
+                </div>
+            </div>
+        </div>
+        <div class="recommendInfo">
+            <div class="videoImgWrap">
+                <img class="videoImg" src="http://wx3.sinaimg.cn/mw690/005Pbvbogy1g2819qoexjj30dw09940g.jpg" alt="">
+            </div>
+            <div class="recommendDetails">
+                <div class="recommendtitle">教学视频教学视频教学视频</div>
+
+                <div class="other">
+                    <div class="recommendauthor">王老师</div>
+                    <span class="recommendgrade">一年级</span>
+                    <span class="recommendsubject">语文</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+</body>
+
+</html>
